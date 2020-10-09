@@ -3,6 +3,7 @@ package com.example.lesson5
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -46,6 +47,15 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener {
             val datePicker = TimePickerDialog(this@MainActivity,this, 0, 0 ,true)
             datePicker.show()
         }
+
+        sharedPrefs.setOnClickListener {
+            startActivity(Intent(this, SharedPreferencesActivity::class.java))
+        }
+
+
+        val prefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        Log.d(TAG, "main activity onCreate:${prefs.getBoolean("isAuth", false)} ")
+
     }
     private val TAG = "MainActivity"
     override fun onTimeSet(p0: TimePicker?, p1: Int, p2: Int) {

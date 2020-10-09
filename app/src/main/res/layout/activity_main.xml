@@ -32,4 +32,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="show datePicker"/>
+
+    <Button
+        android:id="@+id/sharedPrefs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="shared Prefs"/>
+
+
 </LinearLayout>
